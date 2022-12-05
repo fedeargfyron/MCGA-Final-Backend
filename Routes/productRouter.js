@@ -6,16 +6,18 @@ const {
     deleteProduct
 } = require ('../Controllers/productController');
 
+const authMiddleware = require('../Middlewares/AuthMiddleware');
+
 const router = require('express').Router();
 
 router.get('/', getProducts);
 
 router.get('/byId/:id', getById);
 
-router.post('/', postProduct);
+router.post('/', authMiddleware, postProduct);
 
-router.put('/:id', updateProduct);
+router.put('/:id', authMiddleware, updateProduct);
 
-router.delete('/:id', deleteProduct);
+router.delete('/:id', authMiddleware, deleteProduct);
 
 module.exports = router;
