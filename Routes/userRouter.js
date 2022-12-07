@@ -7,7 +7,7 @@ const authMiddleware = require('../Middlewares/AuthMiddleware');
 
 const router = require('express').Router();
 
-router.get('/login', loginUser);
+router.post('/login', loginUser);
 
 router.get('/byId/:id', authMiddleware ,getById);
 
