@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors')
 
 //const { initializeApp } = require("firebase/app");
 const router = require('./Routes');
@@ -12,6 +13,7 @@ app.listen(PORT, () => {
 });
 
 app.use(express.json());
+app.use(cors());
 app.use('/', router);
 
 /*

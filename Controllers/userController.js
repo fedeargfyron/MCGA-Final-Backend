@@ -3,13 +3,17 @@ const jwt = require('jsonwebtoken');
 
 const loginUser = async (req, res) => {
     try{
+        console.log(req.body);
         let email = req.body.email;
         let user = await User.findOne({
             email: email,
             password: req.body.pass
         });
         if(!user)
-            throw new Error("Invalid user");
+            return res.status(401).json({
+                Success: false,
+                Message: "Invalid user"
+            })
 
         const token = jwt.sign({
             email: email,
