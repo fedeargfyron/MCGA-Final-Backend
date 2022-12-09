@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 
 const loginUser = async (req, res) => {
     try{
-        console.log(req.body);
         let email = req.body.email;
         let user = await User.findOne({
             email: email,
@@ -39,7 +38,6 @@ const loginUser = async (req, res) => {
         })
     }
     catch (err){
-        console.log(err);
         res.status(500).json({ 
             Success: false,
             Message: err
