@@ -8,7 +8,7 @@ const getProducts = async (req, res) => {
     catch (err){
         res.status(500).json({ 
             Success: false,
-            Message: err
+            Message: err.message
         })
     }
 }
@@ -22,7 +22,7 @@ const getById = async (req, res) => {
     catch (err){
         res.status(500).json({ 
             Success: false,
-            Message: err
+            Message: err.message
         })
     }
 }
@@ -38,7 +38,7 @@ const postProduct = async (req, res) => {
     catch (err){
         res.status(500).json({ 
             Success: false,
-            Message: err
+            Message: err.message
         })
     }
 }
@@ -55,7 +55,7 @@ const updateProduct = async (req, res) => {
     catch (err){
         res.status(500).json({ 
             Success: false,
-            Message: err
+            Message: err.message
         })
     }
 }
@@ -72,7 +72,7 @@ const deleteProduct = async (req, res) => {
     catch (err){
         res.status(500).json({ 
             Success: false,
-            Message: err
+            Message: err.message
         })
     }
 }
