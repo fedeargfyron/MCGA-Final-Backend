@@ -12,7 +12,7 @@ const router = require('express').Router();
 
 router.get('/', getProducts);
 
-router.get('/byId/:id', getById);
+router.get('/byId/:id', authMiddleware, getById);
 
 router.post('/', authMiddleware, postProduct);
 

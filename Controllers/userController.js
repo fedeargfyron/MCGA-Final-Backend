@@ -22,6 +22,9 @@ const loginUser = async (req, res) => {
         {
             expiresIn: '1d'
         });
+
+        const decoded = await jwt.verify(token, process.env.JWT_KEY);
+        
         const updatedUser = await User.findOneAndUpdate(
             { email: email },
             { token },
@@ -33,7 +36,8 @@ const loginUser = async (req, res) => {
             data: {
                 email: updatedUser.email,
                 token: updatedUser.token,
-                id: updatedUser._id
+                id: updatedUser._id,
+                expirationAt: decoded.exp
             }
         })
     }
