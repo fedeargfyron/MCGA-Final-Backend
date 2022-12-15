@@ -42,6 +42,14 @@ npm start
     * GET: Adjuntando /login al endpoint y un body con el email y la contraseña del usuario que corresponda, inicia sesión
     y devuelve las credenciales necesarias.
 
+## Repositorio
+
+https://github.com/fedeargfyron/MCGA-Final-Backend
+
+## Produccion
+
+https://mcga-final-backend-v2f-m5xtgxipz-fedeargfyron.vercel.app
+
 ## Tecnologias
 
 * Node.js
